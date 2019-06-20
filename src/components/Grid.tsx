@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import { colors } from "../styles";
 
 interface IGridStyleProps {
   itemMaxWidth?: number;
@@ -16,7 +15,6 @@ export const SGrid = styled.div<IGridStyleProps>`
   padding: 24px;
   overflow-x: hidden;
   overflow-y: scroll;
-  background: rgb(${colors.white});
 
   display: grid;
   grid-template-columns: ${({ itemMaxWidth }) =>

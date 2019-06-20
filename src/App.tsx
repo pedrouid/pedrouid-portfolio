@@ -8,27 +8,32 @@ const SLayout = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
-  max-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
 `;
 
-const SContent = styled.div`
+const SSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  max-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  min-height: 100vh;
+`;
+
+const SCenter = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const SColumn = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+`;
+
+const SHero = styled(SColumn)`
+  max-width: 600px;
 `;
 
 const SAppLabel = styled.div`
@@ -46,7 +51,16 @@ const SAppField = styled.div`
 
 const App = () => (
   <SLayout>
-    <SContent>
+    <SSection>
+      <SCenter>
+        <SHero>
+          <h1>{`Pedro Gomes`}</h1>
+          <p>{`Full Stack Developer`}</p>
+          <p>{`Berlin, Germany`}</p>
+        </SHero>
+      </SCenter>
+    </SSection>
+    <SSection>
       <Grid itemMaxWidth={210} itemMaxHeight={160} gap={10}>
         <a href="/" target="_blank" rel="noreferrer noopener">
           <Card shadow>
@@ -65,7 +79,7 @@ const App = () => (
           </Card>
         </a>
       </Grid>
-    </SContent>
+    </SSection>
   </SLayout>
 );
 
